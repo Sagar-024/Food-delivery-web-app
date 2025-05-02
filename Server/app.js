@@ -1,6 +1,7 @@
 
 import cors from "cors"
-import express from "express"
+import { json , express } from "express"
+
 
 //all user routes import 
 import authRouter from './routes.js/userRoutes/auth.js'
@@ -20,8 +21,9 @@ import orderRouter from './routes.js/adminRoutes/order.js'
 
 //start express 
 const app = express()
+app.use( json())
 app.use(cors())
-const port = 4000 || process.env.PORT
+const port = 5000 || process.env.PORT
 
 
 // Routes for the user
